@@ -1,5 +1,6 @@
 package com.weatherapp
 
+import android.R.attr.text
 import android.app.Activity
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP
@@ -117,6 +118,20 @@ fun LoginPage(modifier: Modifier = Modifier) {
                 }
             ) {
                 Text("Limpar")
+            }
+
+            Spacer(modifier = Modifier.size(12.dp))
+
+            Button(
+                onClick = {
+                    activity.startActivity(
+                        Intent(activity, RegisterActivity::class.java).setFlags(
+                            FLAG_ACTIVITY_SINGLE_TOP
+                        )
+                    )
+                }
+            ) {
+                Text("Registre-se")
             }
         }
     }
